@@ -416,3 +416,14 @@ there.
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
+
+blockquote {
+    padding: 1em;
+    background-color: #e6ebf0;
+    border-left: 7px solid #96acc4;
+    margin-left: 1em;
+}
+
+blockquote > p {
+    margin: 0;
+}

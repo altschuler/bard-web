@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Bard - getting started</title>
+
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="../normalize.css">
+        <link rel="stylesheet" href="../skeleton.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <center>
+                <h1 style="margin-bottom: 0.3em;">Bard</h1>
+                <a href="/">
+                    <img title="The Bard" src="../wizard.jpg" height="200px" />
+                </a>
+            </center>
+<h2 id="getting-started">Getting started</h2>
+<p>This is a brief how-to guide, that will guide you through setting up
+a simple project in Bard and familiarize you with the fundamental
+concepts used in Bard.</p>
+<p>You will need a copy of Bard installed on your computer (downloadable
+from <a href="https://bard.audio">https://bard.audio</a>), and some
+audio files. You can find plenty around the internet (eg. <a
+href="https://tabletopaudio.com">here</a> or <a
+href="https://freesound.org">here</a>). Bard supports .wav, .mp3, .flac,
+.ogg and a few other common audio formats.</p>
+<p>There are a some fundamental concepts to learn in Bard. We’ll go
+through them below, and if you want to follow along you’ll end up with a
+very simple project.</p>
+<blockquote>
+<p>Text in these boxes indicate something you should do to follow
+along.</p>
+</blockquote>
+<h3 id="the-basic-idea">The basic idea</h3>
+<p>The fundamental idea with Bard is that you can create rich
+interactive sound boards that you can <em>easily</em> control during a
+<strong>Live</strong> session. Setting up a project is not necessarily
+very quick or easy - to begin with at least - but using it during a
+session should be simple.</p>
+<p>This is achieved by throwing in all your audio files, organizing them
+and setting them up to play in certain ways under certain conditions.
+You will end up with a sort of control panel with simple buttons and
+sliders, and when you change them Bard will mix your audio together to
+create an immersive audioscape.</p>
+<h3 id="how-it-works">How it works</h3>
+<h4 id="projects">Projects</h4>
+<p>To do anything in Bard you must create a Project. Create one from the
+<code>File &gt; New project...</code> menu.</p>
+<h4 id="edit-and-live-mode">Edit and Live mode</h4>
+<p>There are two distinct modes that Bard can be in,
+<strong>Edit</strong> and <strong>Live</strong>. Edit mode is where you
+- as the name suggests - edit your project and wire all the things up so
+they fit together nicely. Live mode is what you use when you want to
+“use” your project, eg. in a D&amp;D session. In this mode all the bells
+and whistles disappear and you only see the parts of the UI that you set
+up yourself in Boards (more on Boards later).</p>
+<p>You can change between Edit and Live at any time with the little icon
+next to the project name:</p>
+<p><img src="images/live_mode.png" title="Live Mode" alt="Live Mode" width="100%"/></p>
+<p>The icon changes and turns red when you’re in Live, click it again to
+go back to Edit.</p>
+<h4 id="sounds">Sounds</h4>
+<p>When you import audio files into Bard, they are added to your Sound
+Library panel. You can see various information about the audio file and
+add tags to help you organize your sounds. You can also “preview” the
+sound.</p>
+<blockquote>
+<p>Import your sounds in the Sound Library panel with the “Add sounds”
+button. You can import multiple files at once.</p>
+</blockquote>
+<h4 id="playables">Playables</h4>
+<p>To use the <strong>Sounds</strong>, you create
+<strong>Playables</strong>. These are the most important building block
+when setting up projects. A Playable is anything that can be “played”
+(surprise!). Most Playables can be nested within each other in a
+tree-like manner, which allows you to build complex “graphs” of audio.
+When a Playable is nested within another it is called a “child”, and the
+Playable it is nested within is called its “parent”.</p>
+<p>There are different types of Playables. They all share a common set
+of settings such as volume, pitch, looping and <strong>Effects</strong>
+(more on Effects later), and each type has specific settings.</p>
+<p>There are five different types of Playables:</p>
+<ul>
+<li>Sound Playable: The most simple type, it plays a Sound from your
+Sound Library.</li>
+<li>List Playable: Plays its children in sequence, just like a regular
+playlist.</li>
+<li>State Playable: Plays a child depending on the current value of a
+State (more on States next).</li>
+<li>Random Playable: Plays a randomly chosen child.</li>
+<li>Simul Playable: Plays all its children simultaneously.</li>
+</ul>
+<p>In the “Playables” panel, you can create a new Playable with the “Add
+playable…” button. You can then click on the new playable (it will be
+selected by default) and change its configuration in the “Edit” panel.
+For a Sound Playable, the most important field to set is the “Sound”
+field, which determines which Sound from your library to play.</p>
+<p>You can play the Playable by click the play button in the “Controls”
+panel, or press <code>&lt;space&gt;</code> on your keyboard.</p>
+<p>You can rearrange and nest Playables by dragging them around in the
+“Playables” panel.</p>
+<blockquote>
+<p>Try to create two Sound Playables and a List Playable. Set the
+“Sound” field in each Sound Playable to Sounds from your library.
+Finally drag the two Sound Playables into the List Playable and play it.
+It should look something like this:</p>
+<p><a href="images/sound_library.png" target="_blank"><img src="images/sound_library.jpg" title="Sound Library" alt="Sound Library" height="200"/></a></p>
+</blockquote>
+<h4 id="states">States</h4>
+<p><strong>States</strong> are like custom dropdown boxes, which you can
+use to control various elements of a project. First a few example of
+when <strong>States</strong> can be useful:</p>
+<ul>
+<li>Controlling the ambience: with a <strong>State</strong> called
+“Weather” with “Rainy”, “Thunder”, “Sunny” as possible options, for each
+of those options you can play a specific <strong>Playable</strong> that
+matches the ambience of the weather.</li>
+<li>Focus: with a <strong>State</strong> called “In Conversation” with
+“Yes” and “No” as options, you could turn down the volume of all
+ambience sounds when your party is in conversation, to avoid
+distraction.</li>
+<li>Combat: with a <strong>State</strong> called “Combat” with “None”,
+“Preparing”, “Fighting” and “Heavy” you could play different variations
+of combat music, and turn down other ambience sounds when combat is
+anything but “None”.</li>
+</ul>
+<p>To create a <strong>State</strong>,</p>
+<h4 id="values">Values</h4>
+<p>Values are similar to <strong>States</strong>, but instead of a
+dropdown like selection, they are numbers. You create
+<strong>Values</strong> in the “Values” panel, and you can set the
+minimum and maximum values that the <strong>Value</strong> can take. Use
+<strong>Values</strong> to describe things like distance, intensity or
+loudness.</p>
+<h5 id="value-links">Value Links</h5>
+<p>Various settings of <strong>Playables</strong> (such as volume, pitch
+and <strong>Effect</strong> settings) can be “linked” to
+<strong>Values</strong> and <strong>States</strong>. Linking a value
+means that instead of having one static value, the value can change
+depending on the linked <strong>Value</strong> or
+<strong>State</strong>. This is a powerful concept that enables all
+sorts of ideas.</p>
+<p>When you see the <strong>Value Link</strong> icon
+<img src="images/value_link.png" title="Value Link icon" alt="Value Link icon" style="height: 1.6em"/>
+next to an input field it means that the field can be <strong>Value
+Linked</strong>. Drag a <strong>Value</strong> or a
+<strong>State</strong> onto the icon and then set up the mapping. Click
+the button again to remove the mapping.</p>
+<h4 id="boards">Boards</h4>
+<p><strong>Boards</strong> are the main thing you’ll be using in Live
+Mode. You can add almost all of the above types of elements to a Board
+by dragging them onto it. Boards are the interface you make for yourself
+to control a Live session, and you can organize things in which ever way
+you want. Maybe it makes sense for you to create a
+<strong>Board</strong> for each location your story takes place in.
+Maybe you want one for each type of scene, be it combat, travelling or
+conversing.</p>
+<p>Each type of element displays and functions differently in a
+<strong>Board</strong>. <strong>Playables</strong> display as a button
+that will play the <strong>Playable</strong> when clicked.
+<strong>States</strong> display a dropdown menu in which you select the
+current value of a <strong>State</strong>.</p>
+<p>Note that <strong>Sounds</strong> <em>cannot</em> be added to a
+<strong>Board</strong>, you should instead add a <strong>Sound
+Playable</strong> with that <strong>Sound</strong> selected.</p>
+<h4 id="effects">Effects</h4>
+<p>Effects change the way a <strong>Playable</strong> sounds by applying
+“filters” to the audio stream. With any <strong>Playable</strong>
+selected, in “Edit” panel you’ll see an “Effects” section. Here you can
+add one or more <strong>Effects</strong> and change their configuration.
+These are things like reverb, echo and pitch shifting, and various other
+types of filters. The best way to create good <strong>Effects</strong>
+is to just play with it until you find something that sounds right for
+you.</p>
+<p>All of the settings for an <strong>Effect</strong> can use
+<strong>Value Links</strong>.</p>
+<h4 id="voice-changers">Voice Changers</h4>
+<p><strong>Voice Changers</strong> take input from your microphone and
+apply <strong>Effects</strong> to it before playing it back on your
+output device. The <strong>Effects</strong> work exactly like for
+<strong>Playables</strong>. There is a small latency between the input
+and output because the effects have to be applied and because of
+hardware limitations.</p>
+<p>Use <strong>Voice Changers</strong> to create voices for characters
+in your story.</p>
+<p><span style="font-weight: bold; color: red">WARNING!</span> If your
+speakers are close to your microphone (such as when using a laptop
+without headphones), you will likely create a feedback loop if you try
+to activate a <strong>Voice Changer</strong>*. This can potentially
+damage your ears or speakers, so please turn down the volume of your
+speakers and be ready to deactivate the <strong>Voice Changer</strong>,
+or use headphones.</p>
+<h4 id="events">Events</h4>
+<p>Events are used to group actions you would normally do “manually”
+into a simple button. For instance, you could have an event called
+“Enter Dungeon” that sets a state to a certain value, plays an
+“entrance” sound and changes the active <strong>Board</strong> to one
+named “Dungeon”.</p>
+        </div>
+    </body>
+
+</html>
